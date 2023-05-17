@@ -8,6 +8,11 @@ This repository contains a collection of my Flutter projects. Each project is lo
 ### Project 2: Quotes
 This Flutter project displays a list of awesome quotes and allows the user to delete them as needed. It was created while watching the Net Ninja Flutter tutorial series.
 
+### Project 3: World Time
+World Time is a Flutter project that shows the current time in different countries around the world. The project uses the WorldTime API to get the current time and location data for each country.
+
+
+
 ## Installation
 1. Clone this repository to your local machine:
 ```bash
