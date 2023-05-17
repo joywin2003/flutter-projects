@@ -6,18 +6,125 @@ void main() {
   ));
 }
 
-class NinjaCard extends StatelessWidget {
+// class NinjaCard extends StatelessWidget {
+//   const NinjaCard({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.blueGrey[900],
+//       appBar: AppBar(
+//         title: const Text("Ninja ID Card"),
+//         centerTitle: true,
+//         backgroundColor: Colors.grey[800],
+//         elevation: 0,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children:  [
+//             const Center(
+//               child: CircleAvatar(
+//                 backgroundImage: AssetImage('assets/profile.webp'),
+//                 radius: 40,
+//               ),
+//             ),
+//             Divider(
+//               height: 100,
+//               color: Colors.grey[400],
+//             ),
+//             const Text(
+//               'NAME',
+//               style: TextStyle(
+//                 color: Colors.grey,
+//                 fontSize: 14,
+//                 letterSpacing: 1.0,
+//               ),
+//             ),
+//             const SizedBox(height: 8),
+//             const Text(
+//                 'Joywin Bennis',
+//                 style: TextStyle(
+//                 color: Colors.amberAccent,
+//                 fontSize: 18,
+//                 letterSpacing: 1.0,
+//                 fontWeight: FontWeight.bold,
+//                 ),
+//               ),
+//
+//             const SizedBox(height: 20.0),
+//             const Text(
+//               'CURRENT NINJA LEVEL',
+//               style: TextStyle(
+//                 color: Colors.grey,
+//                 fontSize: 14,
+//                 letterSpacing: 1.0,
+//               ),
+//             ),
+//             const SizedBox(height: 8),
+//             const Text(
+//               '14',
+//               style: TextStyle(
+//                 color: Colors.amberAccent,
+//                 fontSize: 18,
+//                 letterSpacing: 1.0,
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),
+//
+//             const SizedBox(height: 20),
+//             Row(
+//                 children: [
+//                 Icon(
+//                 Icons.email,
+//                 color: Colors.grey[400],
+//                 ),
+//                 const SizedBox(width: 10.0),
+//                 Text(
+//                     'joywinbennis0987@gmail.com',
+//                     style: TextStyle(
+//                     color: Colors.grey[400],
+//                     fontSize: 18.0,
+//                     letterSpacing: 1.0,
+//                     ),
+//                   ),
+//                 ]
+//               ),
+//             ],
+//           ),
+//         ),
+//     );
+//   }
+// }
+
+class NinjaCard extends StatefulWidget {
   const NinjaCard({Key? key}) : super(key: key);
 
   @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+  int ninjaSkill = 0;
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueGrey[900],
+    return Scaffold(backgroundColor: Colors.blueGrey[900],
       appBar: AppBar(
         title: const Text("Ninja ID Card"),
         centerTitle: true,
         backgroundColor: Colors.grey[800],
         elevation: 0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            ninjaSkill +=1;
+          });
+
+        },
+          child: Icon(Icons.add),
+          backgroundColor: Colors.amber,
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
@@ -44,14 +151,14 @@ class NinjaCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             const Text(
-                'Joywin Bennis',
-                style: TextStyle(
+              'Joywin Bennis',
+              style: TextStyle(
                 color: Colors.amberAccent,
                 fontSize: 18,
                 letterSpacing: 1.0,
                 fontWeight: FontWeight.bold,
-                ),
               ),
+            ),
 
             const SizedBox(height: 20.0),
             const Text(
@@ -63,8 +170,8 @@ class NinjaCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            const Text(
-              '14',
+             Text(
+              '$ninjaSkill',
               style: TextStyle(
                 color: Colors.amberAccent,
                 fontSize: 18,
@@ -76,24 +183,23 @@ class NinjaCard extends StatelessWidget {
             const SizedBox(height: 20),
             Row(
                 children: [
-                Icon(
-                Icons.email,
-                color: Colors.grey[400],
-                ),
-                const SizedBox(width: 10.0),
-                Text(
+                  Icon(
+                    Icons.email,
+                    color: Colors.grey[400],
+                  ),
+                  const SizedBox(width: 10.0),
+                  Text(
                     'joywinbennis0987@gmail.com',
                     style: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 18.0,
-                    letterSpacing: 1.0,
+                      color: Colors.grey[400],
+                      fontSize: 18.0,
+                      letterSpacing: 1.0,
                     ),
                   ),
                 ]
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-    );
+      ),);
   }
 }
